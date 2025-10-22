@@ -30,6 +30,11 @@ class MainActivity : ComponentActivity() {
         Log.d(TAG, "MainActivity setup completed")
     }
 
+    // TODO: Consider adding analytics tracking for app usage
+    private fun logAppStart() {
+        // Placeholder for future analytics
+    }
+
     companion object {
         private const val TAG = "InventoryMainActivity"
     }
