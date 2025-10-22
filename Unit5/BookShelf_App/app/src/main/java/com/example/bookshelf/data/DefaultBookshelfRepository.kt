@@ -1,5 +1,6 @@
 package com.example.bookshelf.data
 
+import android.util.Log
 import com.example.bookshelf.model.Book
 import com.example.bookshelf.network.BookshelfApiService
 
@@ -9,32 +10,36 @@ import com.example.bookshelf.network.BookshelfApiService
 class DefaultBookshelfRepository(
     private val bookshelfApiService: BookshelfApiService
 ) : BookshelfRepository {
+
+    private val tag = "BookshelfRepository"
+
     /** Retrieves list of Volumes from underlying data source */
-    // Notes: List<Book>? NULLABLE
     override suspend fun getBooks(query: String): List<Book>? {
         return try {
-            val res = bookshelfApiService.getBooks(query)
-            if (res.isSuccessful) {
-                res.body()?.items ?: emptyList()
+            val response = bookshelfApiService.getBooks(query)
+            if (response.isSuccessful) {
+                response.body()?.items ?: emptyList()
             } else {
+                Log.e(tag, "Failed to fetch books: ${response.code()} ${response.message()}")
                 emptyList()
             }
         } catch (e: Exception) {
-            e.printStackTrace()
+            Log.e(tag, "Exception while fetching books", e)
             null
         }
     }
 
     override suspend fun getBook(id: String): Book? {
         return try {
-            val res = bookshelfApiService.getBook(id)
-            if (res.isSuccessful) {
-                res.body()
+            val response = bookshelfApiService.getBook(id)
+            if (response.isSuccessful) {
+                response.body()
             } else {
+                Log.e(tag, "Failed to fetch book $id: ${response.code()} ${response.message()}")
                 null
             }
         } catch (e: Exception) {
-            e.printStackTrace()
+            Log.e(tag, "Exception while fetching book $id", e)
             null
         }
     }

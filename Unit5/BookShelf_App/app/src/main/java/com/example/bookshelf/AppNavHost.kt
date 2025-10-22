@@ -13,19 +13,25 @@ import com.example.bookshelf.ui.screens.query_screen.QueryScreen
 import com.example.bookshelf.ui.screens.query_screen.QueryViewModel
 import com.example.bookshelf.ui.screens.menu_screen.MenuScreen
 
+/**
+ * Navigation host for the Bookshelf app.
+ * Defines the navigation graph with all screens.
+ *
+ * @param navController The navigation controller for managing navigation.
+ * @param modifier Modifier for the NavHost.
+ */
 @Composable
 fun BookshelfNavHost(
     navController: NavHostController,
     modifier: Modifier = Modifier
 ) {
-    val viewModel : QueryViewModel = viewModel(factory = QueryViewModel.Factory)
+    val viewModel: QueryViewModel = viewModel(factory = QueryViewModel.Factory)
 
     NavHost(
         navController = navController,
         startDestination = AppDestinations.MenuScreen.name,
         modifier = modifier
     ) {
-
         composable(route = AppDestinations.MenuScreen.name) {
             MenuScreen(
                 onSearchClick = {
@@ -57,7 +63,7 @@ fun BookshelfNavHost(
         }
 
         composable(route = AppDestinations.DetailScreen.name) {
-            val detailViewModel : DetailsViewModel = viewModel(factory = DetailsViewModel.Factory)
+            val detailViewModel: DetailsViewModel = viewModel(factory = DetailsViewModel.Factory)
             detailViewModel.getBook(viewModel.selectedBookId)
 
             DetailScreen(

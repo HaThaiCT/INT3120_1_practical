@@ -8,7 +8,7 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 
 /**
- * A public interface that exposes the [getBooks] method
+ * API service interface for interacting with the Google Books API.
  */
 interface BookshelfApiService {
 
@@ -17,13 +17,20 @@ interface BookshelfApiService {
     }
 
     /**
-     * Returns a [List] of [Book] and this method can be called from a Coroutine.
-     * The @GET annotation indicates that the "volumes" endpoint will be requested with the GET
-     * HTTP method
+     * Searches for books based on a query string.
+     *
+     * @param query The search query.
+     * @return A Response containing the QueryResponse with list of books.
      */
     @GET("volumes")
     suspend fun getBooks(@Query("q") query: String): Response<QueryResponse>
 
+    /**
+     * Retrieves details of a specific book by its ID.
+     *
+     * @param id The book ID.
+     * @return A Response containing the Book details.
+     */
     @GET("volumes/{id}")
     suspend fun getBook(@Path("id") id: String): Response<Book>
 }
