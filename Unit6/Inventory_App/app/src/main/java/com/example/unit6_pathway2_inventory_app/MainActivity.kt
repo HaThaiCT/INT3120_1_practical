@@ -1,6 +1,7 @@
 package com.example.unit6_pathway2_inventory_app
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -14,6 +15,7 @@ import com.example.unit6_pathway2_inventory_app.ui.theme.Unit6_Pathway2_Inventor
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         enableEdgeToEdge()
+        Log.d(TAG, "MainActivity onCreate called")
         super.onCreate(savedInstanceState)
         setContent {
             Unit6_Pathway2_Inventory_AppTheme {
@@ -25,5 +27,10 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+        Log.d(TAG, "MainActivity setup completed")
+    }
+
+    companion object {
+        private const val TAG = "InventoryMainActivity"
     }
 }
