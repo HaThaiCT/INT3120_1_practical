@@ -1,6 +1,7 @@
 package com.example.bookshelf
 
 import android.app.Application
+import android.util.Log
 import com.example.bookshelf.di.AppContainer
 import com.example.bookshelf.di.DefaultAppContainer
 
@@ -17,6 +18,12 @@ class BookshelfApplication : Application() {
      */
     override fun onCreate() {
         super.onCreate()
+        Log.d(TAG, "BookshelfApplication onCreate called")
         container = DefaultAppContainer()
+        Log.d(TAG, "App container initialized")
+    }
+
+    companion object {
+        private const val TAG = "BookshelfApplication"
     }
 }
