@@ -15,12 +15,31 @@ import kotlinx.coroutines.launch
 import retrofit2.HttpException
 import java.io.IOException
 
+/**
+ * UI state for the Amphibians screen.
+ */
 sealed interface AmphibiansUiState {
+    /**
+     * State when data is successfully loaded.
+     */
     data class Success(val amphibians: List<Amphibian>) : AmphibiansUiState
+
+    /**
+     * State when an error occurs.
+     */
     object Error : AmphibiansUiState
+
+    /**
+     * State when data is loading.
+     */
     object Loading : AmphibiansUiState
 }
 
+/**
+ * ViewModel for managing amphibians data and UI state.
+ *
+ * @param amphibiansRepository The repository for fetching amphibians data.
+ */
 class AmphibiansViewModel(private val amphibiansRepository: AmphibiansRepository) : ViewModel() {
     var amphibiansUiState: AmphibiansUiState by mutableStateOf(AmphibiansUiState.Loading)
         private set
@@ -29,6 +48,9 @@ class AmphibiansViewModel(private val amphibiansRepository: AmphibiansRepository
         getAmphibians()
     }
 
+    /**
+     * Fetches amphibians data from the repository and updates UI state.
+     */
     fun getAmphibians() {
         viewModelScope.launch {
             amphibiansUiState = AmphibiansUiState.Loading
@@ -43,6 +65,9 @@ class AmphibiansViewModel(private val amphibiansRepository: AmphibiansRepository
     }
 
     companion object {
+        /**
+         * Factory for creating AmphibiansViewModel instances.
+         */
         val Factory: ViewModelProvider.Factory = viewModelFactory {
             initializer {
                 val application = (this[ViewModelProvider.AndroidViewModelFactory.APPLICATION_KEY]

@@ -6,10 +6,16 @@ import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
 import retrofit2.Retrofit
 
+/**
+ * Dependency injection container interface.
+ */
 interface AppContainer {
     val amphibiansRepository: AmphibiansRepository
 }
 
+/**
+ * Default implementation of the app container.
+ */
 class DefaultAppContainer : AppContainer {
     private val baseUrl = "https://android-kotlin-fun-mars-server.appspot.com/"
 

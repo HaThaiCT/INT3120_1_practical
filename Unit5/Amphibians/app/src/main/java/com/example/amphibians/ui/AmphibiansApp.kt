@@ -15,6 +15,10 @@ import com.example.amphibians.R
 import com.example.amphibians.ui.screens.AmphibiansViewModel
 import com.example.amphibians.ui.screens.HomeScreen
 
+/**
+ * Main composable for the Amphibians app.
+ * Sets up the Scaffold with top app bar and home screen.
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AmphibiansApp() {
