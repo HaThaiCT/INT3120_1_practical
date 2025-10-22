@@ -17,23 +17,31 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalLayoutDirection
 import com.example.sports.ui.SportsApp
 import com.example.sports.ui.theme.SportsTheme
+
+/**
+ * Main activity for the Sports App.
+ * Sets up the Compose UI with edge-to-edge display and adaptive layout based on window size.
+ */
 @OptIn(ExperimentalMaterial3WindowSizeClassApi::class)
 class MainActivity : ComponentActivity() {
+
+    /**
+     * Called when the activity is starting. Sets up the Compose content with theme and adaptive UI.
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         enableEdgeToEdge()
         super.onCreate(savedInstanceState)
         setContent {
             SportsTheme {
                 val layoutDirection = LocalLayoutDirection.current
-                Surface(
-                    modifier = Modifier
-                        .padding(
-                            start = WindowInsets.safeDrawing.asPaddingValues()
-                                .calculateStartPadding(layoutDirection),
-                            end = WindowInsets.safeDrawing.asPaddingValues()
-                                .calculateEndPadding(layoutDirection)
-                        )
-                ) {
+                // Apply safe drawing padding to avoid overlap with system bars
+                val safePaddingModifier = Modifier.padding(
+                    start = WindowInsets.safeDrawing.asPaddingValues()
+                        .calculateStartPadding(layoutDirection),
+                    end = WindowInsets.safeDrawing.asPaddingValues()
+                        .calculateEndPadding(layoutDirection)
+                )
+                Surface(modifier = safePaddingModifier) {
                     val windowSize = calculateWindowSizeClass(this)
                     SportsApp(
                         windowSize = windowSize.widthSizeClass,
