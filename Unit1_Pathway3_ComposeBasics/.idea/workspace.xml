@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="74579111-cebe-4704-a180-686ee116bf80" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Unit2_Pathway2_ClickBehavior/app/src/main/res/drawable/lemon_drink.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Unit2_Pathway2_ClickBehavior/app/src/main/res/drawable/lemon_restart.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Unit2_Pathway2_ClickBehavior/app/src/main/res/drawable/lemon_squeeze.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Unit2_Pathway2_ClickBehavior/app/src/main/res/drawable/lemon_tree.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Unit2_Pathway2_ClickBehavior/app/src/main/res/values/dimen.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Unit2_Pathway2_DiceRollerApp/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Unit2_Pathway2_DiceRollerApp/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Unit2_Pathway2_DiceRollerApp/app/src/main/java/com/example/diceroller/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../Unit2_Pathway2_DiceRollerApp/app/src/main/java/com/example/diceroller/MainActivity.kt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="33GlmMTtmFxR0xdOJTr2UrqCP1R" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "android.gradle.sync.needed": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/home/th1enq/Documents/INT3120_1_Practical/Unit1_Pathway3_ComposeBasics/ComposeArticle"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="74579111-cebe-4704-a180-686ee116bf80" name="Changes" comment="" />
+      <created>1758951449453</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1758951449453</updated>
+    </task>
+    <servers />
+  </component>
+</project>
